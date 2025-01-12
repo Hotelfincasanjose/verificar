@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario de Verificación</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="form-container">
+    <img src="assets/logo.jpeg" alt="Logo de la marca">
+  <!-- Formulario de verificación de identificación -->
+    <form id="check-form" onsubmit="event.preventDefault(); checkRegistration();">
+      <input type="text" id="numeroIdentificacion" placeholder="Número de identificación"  required>
+      <button type="submit">Verificar</button>
+    </form>
+
+    <p id="status"></p>
+
+    <!-- Formulario de términos y condiciones (oculto inicialmente) -->
+    <div id="terms-form" style="display: none;">
+      <p id="terms-text">
+        <strong>Términos y condiciones:</strong><br>
+        - Acepto que mis datos sean almacenados y procesados.<br>
+        - Estoy de acuerdo con las políticas del sitio.<br>
+      </p>
+      
+      
+      <input type="radio" id="terms-checkbox" > 
+      <label>Acepto los términos y condiciones</label>
+    
+      <br><br>
+      <input type="text" id="firma" placeholder="Firma (Nombre completo):" required>
+      <br><br>
+      <button type="button" onclick="sendData()">Aceptar y Enviar</button>
+    </div>
+  </div>
+  <!-- Importar Firebase y el archivo JS -->
+  <script type="module" src="consulta.js"></script>
+</body>
+</html>
